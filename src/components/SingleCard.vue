@@ -3,7 +3,7 @@
     <div class="card text-center" style="width: 18rem;">
         <img src="" class="card-img-top" alt="...">
         <div class="card-body">
-            <p class="card-text">{{card.title}}</p>
+            <p class="card-text">{{info.author}}</p>
             <p class="card-text">autore</p>
             <p class="card-text">anno</p>
         </div>
@@ -12,10 +12,11 @@
 </template>
 
 <script>
+
 export default {
     name: 'SingleCard',
     props: {
-        card: Object
+        info: Object,
     }
 }
 </script>

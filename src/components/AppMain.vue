@@ -1,10 +1,12 @@
 <template>
-  <div class="row">
-    <SingleCard v-for="card in AppMain" :key="card"/>
+  <div class="row row-cols-5">
+    <SingleCard v-for="info in infolist" :key="info.id" :info="info"/>
+    {{infolist}}
   </div>
 </template>
 
 <script>
+import axios from 'axios';
 import SingleCard from './SingleCard.vue';
 
 export default {
@@ -12,12 +14,16 @@ export default {
     components: {
     SingleCard
     },
-
+    
     data(){
         return{
-            AppMain: [],
-            endpoint: 'https://flynn.boolean.careers/exercises/api/array/music'
+            infolist: [],
         }
+    },
+    
+    mounted() {
+        axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+        .then(response => (this.infolist = response))
     }
 }
 
