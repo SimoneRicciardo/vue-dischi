@@ -1,7 +1,7 @@
 <template>
   <div class="row row-cols-5">
     <SingleCard v-for="info in infolist" :key="info.id" :info="info"/>
-    {{infolist}}
+
   </div>
 </template>
 
@@ -12,8 +12,8 @@ import SingleCard from './SingleCard.vue';
 export default {
     name: 'AppMain',
     components: {
-    SingleCard
-    },
+    SingleCard,
+},
     
     data(){
         return{
